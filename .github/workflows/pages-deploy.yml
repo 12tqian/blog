@@ -1,5 +1,5 @@
 name: 'Automatic build'
-on:
+on: 
   push:
     branches:
       - main
