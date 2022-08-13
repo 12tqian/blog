@@ -1,7 +1,7 @@
 ---
 title: Information from randomness
 author: tqian
-date: 2022-07-08 12:00:00 +0800
+date: 2022-08-13 12:00:00 +0800
 categories: [Puzzles]
 tags: [probability, math]
 math: true
