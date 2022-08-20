@@ -15,11 +15,11 @@ This will be a technical write up Cochran's theorem, a theorem on the partitioni
 
 The overall idea of Cochran's theorem is to split the sum of squares of random variables (RV) into many quadratic forms. Each form is the cause of some variation. 
 
-Theorem: say that $\vec x \sim \mathcal N(\vec\mu, \Lambda)$, with $\Lambda$ positive definite. If $n$  is the dimension of $\vec x$, then 
+Theorem: say that $ x \sim \mathcal N(\mu, \Lambda)$, with $\Lambda$ positive definite. If $n$  is the dimension of $ x$, then 
 
-$$(\vec x- \vec \mu)^T \Lambda^{-1} (\vec x-\vec\mu) \sim \chi^2(n).$$
+$$( x-  \mu)^T \Lambda^{-1} ( x-\mu) \sim \chi^2(n).$$
 
-Proof: Let $\vec y = \Lambda^{-\frac 12} (\vec x - \vec\mu)$. Then we have $E[\vec y]=\vec 0, \mathrm{Cov}[\vec y] = I$. So $y\sim \mathcal N(\vec 0, I)$. We can compute the above quadratic form to be exactly equivalent to $\vec y^T \vec y$. Therefore, the claim is proven.
+Proof: Let $ y = \Lambda^{-\frac 12} ( x - \mu)$. Then we have $E[ y]= 0, \mathrm{Cov}[ y] = I$. So $y\sim \mathcal N( 0, I)$. We can compute the above quadratic form to be exactly equivalent to $ y^T  y$. Therefore, the claim is proven.
 
 # The main result
 
