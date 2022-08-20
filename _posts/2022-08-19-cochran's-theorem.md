@@ -57,7 +57,7 @@ We do some simple casework now to establish each of the claims.
 
 Let's diagonalize $A_i$ by $O$. Then note that if we let $C_i = I - A_i$, then $OC_iO^T = I - OB_iO^T$, which means $C_i$ is also diagonalized. Consider $W = OX$. Then we have $Q_i = W^T(OA_iO^T)W, \sum_{j\neq i} Q_j = W^T(I - OB_iO^T)W$. Because $Q_i$ are independent, $Q_i$ is independent to $\sum_{j\neq i} Q_j$. We inspect the diagonal values of the two matrices, and if they're independent, their nonzero diagonal entries are disjoint. This forces all their diagonal values to be $1$ or $0$. This forces all eigenvalues of $A_i$ to be $1$ or $0$. The inner matrices have ranks $r_i$, which implies that $A_i$ has $r_i$ eigenvalues of $1$ and the rest $0$'s, so since these matrices sum to $I$, we have that $\sum r_i = n$. Similarly $Q_i\sim \chi^2(r_i)$. 
 
-### Case 2: $Q_i \sim \chi^2(r_i)$$
+### Case 2: $Q_i \sim \chi^2(r_i)$
 
 Let $O$ be the matrix that diagonalizes $A_i$. Because each quadratic form is $\chi^2(r_i)$, once we diagonalize $A_i$, we can use our first lemma above to show all the eigenvalues are $0, 1$. Then we can choose $O$ so that it simultaneously diagonalizes all of $A_i$. So let's simultaneously diagonalize all the matrices and add them up. They sum to $I$, which implies that $\sum r_i = n$ and that their diagonal entries are disjoint, which implies independence.
 
