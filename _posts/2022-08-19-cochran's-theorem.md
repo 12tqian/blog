@@ -91,10 +91,17 @@ $$SSE = Y^T(I - H)Y,$$
 
 $$SSR = Y^T\left(H - \frac 1n J\right)Y.$$
 
-Here $H$ is the hat matrix. The rank of the first matrix is $n-1$. Note that a hat matrix is idempotent. So its rank is $p+1$. Similarly $I-H$ is idempotent, so its rank is $n-p-1$. It remains to determine the rank of $H - \frac 1n J$. Note that $H 1 = 1$, where this is the vector of all $1$'s. This is because we have included a constant in $H$, which means the projection of the all $1$ vector must be itself. So we can expand $H - \frac 1n J$ to be symmetric and idempotent. So its trace is its rank, and that's just the difference of the two traces, which is $p$. Therefore the conditions of Cochran are satisfied. $SSE$ thus is $\chi^2(n - p - 1)$. This is important because it shows we must divide by $n-p-1$ when calculating the standard error. Furthermore, when computing significance tests on $\beta$, the coefficient vector from linear regression, we must use a $t$ distribution with $n-p-1$ degrees of freedom. 
+These represent the total sum of squares (variability in the result), the sum of squares error (difference between observed/predicted), and the sum of squares due to regresoin (difference between predicted value and the mean of the dependent value). Here $H$ is the hat matrix. The rank of the first matrix is $n-1$. Note that a hat matrix is idempotent. So its rank is $p+1$. Similarly $I-H$ is idempotent, so its rank is $n-p-1$. It remains to determine the rank of $H - \frac 1n J$. Note that $H 1 = 1$, where this is the vector of all $1$'s. This is because we have included a constant in $H$, which means the projection of the all $1$ vector must be itself. So we can expand $H - \frac 1n J$ to be symmetric and idempotent. So its trace is its rank, and that's just the difference of the two traces, which is $p$. Therefore the conditions of Cochran are satisfied. $SSE$ thus is $\chi^2(n - p - 1)$. This is important because it shows we must divide by $n-p-1$ when calculating the standard error. Furthermore, when computing significance tests on $\beta$, the coefficient vector from linear regression, we must use a $t$ distribution with $n-p-1$ degrees of freedom. 
+
+## F-test (Chow test)
+
+Let's say we have two models, model $1$ and model $2$, where model $2$ completely contains model $1$. Model $i$ has $p_i$ parameters, where $p_1 < p_2$. Let's try to see whether model $2$ gives a significantly better fit to the data. We use the $f$ test. Let the RSS (residual sum of squares) of the models be $RSS_i$. Then we compute
+
+$$\frac{\frac{RSS_1 - RSS_2}{p_2-p_1}}{\frac{RSS_2}{n-p_2}}.$$
+
+Under the null hypothesis that model $2$ doesn't provide a significantly better fit, we have that $RSS_1 - RSS_2$ is independent to $RSS_2$. Let's analyze why this works. $RSS_i = y^T(I - H_i)y$, where $H_i$ is the hat matrix corresponding to the dataset. Note that $RSS_1 - RSS_2$ results in a quadratic form with $H_2 - H_1$ in the middle. Note that $H_1H_2 = H_1, H_2H_1 = H_1$. This is easier to see geometrically and by looking at the respective orthogonal bases. Then we can easily compute the square of this to show it's idempotent. Its rank is thus $p_2-p_1$. Similarly, $RSS_2$ has rank $n-p_2$. Thus, if we sum $RSS_1 - RSS_2$ and $RSS_2$, we get $RSS_1$ with rank $n-p_1$. The ranks work out so that we can apply Cochran's theorem. Thus, the numerator and denominator are independent scaled $\chi^2$ distributions, and we may apply the F-distribution to it. This gives us our significance test.  
 
 
+### T-test
 
-
-
-
+Note that the t-test requires a ratio between the sample mean and the standard error. If we square it, we get the ratio of two sum of squares. This sounds familiar and we can actually show that these follow the F-distribution. Now why does this matter? If they follow the F-distribution, a way to test whether our results are significant, our null hypothesis, the sample mean and sample variance should be independent. So if we square our t-statistic, we just get an f-statistic. Thus, the t-distribution is just a specific case of the f-distribution.
