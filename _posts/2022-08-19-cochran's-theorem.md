@@ -1,5 +1,5 @@
 ---
-title: Cochran's Theorem
+title: Cochran's theorem and ANOVA
 author: tqian
 date: 2022-08-19 12:00:00 +0800
 categories: [Statistics]
