@@ -24,5 +24,5 @@ These types of information theory/game theory types puzzles are always fun for m
 - [Lion and lambs](https://theconversation.com/lions-and-lambs-can-you-solve-this-classic-game-theory-puzzle-81288)
 - [Blue eyes](https://theconversation.com/lions-and-lambs-can-you-solve-this-classic-game-theory-puzzle-81288)
 
-Addendum: My friend [Gabe](https://gabrieldwu.github.io/) has helped me formalize this a bit more. It is more correct to say for every probability $p$ such that $p > \frac 12$, we can choose a distribution that makes our probability of success less than $p$. It's interesting to think about whether this means we can every achieve more than $\frac 12$, but I think practically this means we can't achieve more than a $\frac 12$ chance of success.
+Addendum: My friend [Gabe](https://gabrieldwu.github.io/) has helped me formalize this a bit more. It is more correct to say for every probability $p$ such that $p > \frac 12$, we can choose a distribution that makes our probability of success less than $p$. It's interesting to think about whether this means we can every achieve more than $\frac 12$, but I think practically this means we can't achieve more than a $\frac 12$ chance of success. 
 
